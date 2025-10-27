@@ -1,0 +1,18 @@
+@import './base.css';
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* DataUploadHub의 배경색과 동일하게 맞추거나
+    흰색(#ffffff)으로 둡니다.
+  */
+  background-color: #f4f7f6;
+}
+
+/* #app 태그는 기본값으로 되돌립니다.
+  (사실 body만 수정해도 문제는 해결됩니다.)
+*/
+#app {
+  display: block;
+  width: 100%;
+}
