@@ -11,11 +11,20 @@ export default defineComponent({
     cardData: {
       type: Object as PropType<CardData>,
       required: true
+    },
+    // 갱신 버튼 표시 여부를 결정하는 prop
+    showRefresh: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
     onUploadClick(){
       this.$emit('open-panel-request')
+    },
+
+    onRefreshClick(){
+      this.$emit('open-date-picker')
     }
   }
 })
@@ -26,6 +35,14 @@ export default defineComponent({
   <div class="card-header">
     <span class="file-icon bi bi-file-earmark-arrow-up-fill"></span>
     <div class="tags">
+      <button
+          v-if="showRefresh"
+          class="refresh-icon-button"
+          @click.stop="onRefreshClick"
+          title="갱신하기"
+      >
+        <span class="bi bi-arrow-clockwise" aria-hidden="true"></span>
+      </button>
       <span class="tag tag-csv">
         {{ cardData.fileType }}
       </span>
@@ -69,7 +86,8 @@ export default defineComponent({
   border-radius: 4px;
   padding: 4px 8px;
 }
-.tags { display: flex; gap: 6px; }
+.tags { display: flex; gap: 8px; /* [변경] 아이콘과 태그 사이 간격 */
+  align-items: center; /* [추가] 아이콘과 태그 세로 정렬 */ }
 .tag { font-size: 12px; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
 .tag-csv { background-color: #f0f0f0; color: #777; }
 .card-body h3 { font-size: 18px; margin: 0 0 8px 0; color: #333; }
@@ -90,4 +108,24 @@ export default defineComponent({
   gap: 8px;
 }
 .upload-button:hover { background-color: #3a5ae0; }
+
+/* [추가] 상단 아이콘 버튼 스타일 */
+.refresh-icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: #444; /* 아이콘 색상 (회색) */
+  font-size: 20px; /* 아이콘 크기 */
+  font-weight: 700; /* 굵게 */
+  line-height: 1; /* 아이콘이 태그와 잘 정렬되도록 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px; /* 모서리 살짝 둥글게 */
+}
+.refresh-icon-button:hover {
+  color: #4a69ff; /* 호버 시 파란색 */
+}
 </style>
