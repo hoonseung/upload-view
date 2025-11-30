@@ -57,6 +57,33 @@ export default defineComponent({
           apiUrl: '/api/v1/upload/operation/plan',
           theme: 'orange'
         },
+        {
+          id: 5,
+          category: 'production',
+          title: '판매단가 리스트 업로드',
+          description: '월 판매 단가 데이터를 업로드합니다.',
+          fileType: 'CSV',
+          apiUrl: '/api/v1/upload/sales/price',
+          theme: 'orange'
+        },
+        {
+          id: 6,
+          category: 'production',
+          title: '표준외주비 리스트 업로드',
+          description: '표준외주비 데이터를 업로드합니다.',
+          fileType: 'CSV',
+          apiUrl: '/api/v1/upload/cost/std',
+          theme: 'orange'
+        },
+        {
+          id: 7,
+          category: 'production',
+          title: '구매외주비 리스트 업로드',
+          description: '구매외주비 데이터를 업로드합니다.',
+          fileType: 'CSV',
+          apiUrl: '/api/v1/upload/cost/purchase',
+          theme: 'orange'
+        }
       ],
       isPanelOpen: false,
       selectedCard: null as CardData | null,
@@ -215,7 +242,7 @@ export default defineComponent({
   font-family: Arial, sans-serif;
   padding: 24px;
   background-color: #f4f7f6;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
