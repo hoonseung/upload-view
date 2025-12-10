@@ -31,7 +31,7 @@ export default defineComponent({
 </script>
 
 <template>
-<div class="upload-card">
+<div class="upload-card" :class="{'theme-orange': cardData.theme === 'orange'}">
   <div class="card-header">
     <span class="file-icon bi bi-file-earmark-arrow-up-fill"></span>
     <div class="tags">
@@ -127,5 +127,28 @@ export default defineComponent({
 }
 .refresh-icon-button:hover {
   color: #4a69ff; /* 호버 시 파란색 */
+}
+
+/* ========================================= */
+/* [수정 2] 오렌지 테마 스타일 추가 (맨 아래에 추가) */
+/* ========================================= */
+
+/* 1. 업로드 버튼 (오렌지색으로 변경) */
+.theme-orange .upload-button {
+  background-color: #ff9f43; /* 밝은 오렌지 */
+}
+.theme-orange .upload-button:hover {
+  background-color: #e67e22; /* 호버 시 진한 오렌지 */
+}
+
+/* 2. 상단 파일 아이콘 (오렌지 배경/색상으로 변경) */
+.theme-orange .file-icon {
+  background-color: #fff3e0; /* 연한 오렌지 배경 */
+  color: #ff9f43;            /* 오렌지 아이콘 색 */
+}
+
+/* 3. (선택사항) 갱신 버튼 호버 색상도 오렌지로 맞춤 */
+.theme-orange .refresh-icon-button:hover {
+  color: #ff9f43;
 }
 </style>

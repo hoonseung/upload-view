@@ -50,7 +50,7 @@ export default defineComponent({
         },
         {
           id: 4,
-          category: 'production',
+          category: 'order',
           title: '운영계획 원본 업로드',
           description: '운영계획 원본 데이터를 업로드합니다.',
           fileType: 'CSV',
@@ -59,7 +59,7 @@ export default defineComponent({
         },
         {
           id: 5,
-          category: 'production',
+          category: 'order',
           title: '판매단가 리스트 업로드',
           description: '월 판매 단가 데이터를 업로드합니다.',
           fileType: 'CSV',
@@ -73,7 +73,6 @@ export default defineComponent({
           description: '표준외주비 데이터를 업로드합니다.',
           fileType: 'CSV',
           apiUrl: '/api/v1/upload/cost/std',
-          theme: 'orange'
         },
         {
           id: 7,
@@ -82,7 +81,6 @@ export default defineComponent({
           description: '구매외주비 데이터를 업로드합니다.',
           fileType: 'CSV',
           apiUrl: '/api/v1/upload/cost/purchase',
-          theme: 'orange'
         }
       ],
       isPanelOpen: false,
