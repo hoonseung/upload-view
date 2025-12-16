@@ -27,13 +27,21 @@ export default defineComponent({
         {
           id: 1,
           category: 'order',
-          title: '서열원본 업로드 (G/D)',
-          description: '기본 서열 데이터를 업로드합니다.',
+          title: 'YERP 서열원본 업로드 (G/D)',
+          description: 'YERP 서열 데이터를 업로드합니다.',
           fileType: 'CSV',
           apiUrl: '/api/v1/upload/plan'
         },
         {
           id: 2,
+          category: 'production',
+          title: 'QAD 서열원본 업로드',
+          description: 'QAD 서열 데이터를 업로드합니다.',
+          fileType: 'CSV',
+          apiUrl: '/api/v1/upload/operation/plan/sap'
+        },
+        {
+          id: 3,
           category: 'order',
           title: '출고 조정값 업로드',
           description: '출고 관련 조정 데이터를 업로드합니다.',
@@ -41,7 +49,7 @@ export default defineComponent({
           apiUrl: '/api/v1/upload/outbound/second'
         },
         {
-          id: 3,
+          id: 4,
           category: 'order',
           title: '고객-국내 재고 업데이트',
           description: '재고 오류를 수정합니다.',
@@ -49,7 +57,7 @@ export default defineComponent({
           apiUrl: '/api/v1/upload/line/customer/stock'
         },
         {
-          id: 4,
+          id: 5,
           category: 'order',
           title: '운영계획 원본 업로드',
           description: '운영계획 원본 데이터를 업로드합니다.',
@@ -58,7 +66,7 @@ export default defineComponent({
           theme: 'orange'
         },
         {
-          id: 5,
+          id: 6,
           category: 'order',
           title: '판매단가 리스트 업로드',
           description: '월 판매 단가 데이터를 업로드합니다.',
@@ -67,7 +75,7 @@ export default defineComponent({
           theme: 'orange'
         },
         {
-          id: 6,
+          id: 7,
           category: 'production',
           title: '표준외주비 리스트 업로드',
           description: '표준외주비 데이터를 업로드합니다.',
@@ -75,7 +83,7 @@ export default defineComponent({
           apiUrl: '/api/v1/upload/cost/std',
         },
         {
-          id: 7,
+          id: 8,
           category: 'production',
           title: '구매외주비 리스트 업로드',
           description: '구매외주비 데이터를 업로드합니다.',
