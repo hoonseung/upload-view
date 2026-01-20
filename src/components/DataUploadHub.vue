@@ -57,6 +57,14 @@ export default defineComponent({
           apiUrl: '/api/v1/upload/line/customer/stock'
         },
         {
+          id: 9,
+          category: 'order',
+          title: '일일 자동차 실적 업로드',
+          description: '일일 자동차 실적을 업로드합니다.',
+          fileType: 'CSV',
+          apiUrl: '/api/v1/upload/daily/act',
+        },
+        {
           id: 5,
           category: 'order',
           title: '운영계획 원본 업로드',
