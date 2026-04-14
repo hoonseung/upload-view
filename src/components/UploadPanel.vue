@@ -80,9 +80,16 @@ export default defineComponent({
       // Spring @RequestParam("uploadDate") String date 와 일치
       formData.append('date', this.uploadDate);
 
+      // for (let [key, value] of  (formData as any).entries()) {
+      //   console.log('FormData 확인:', key, value);
+      // }
       // 3. API 호출
         const url = this.cardData.apiUrl;
-        await apiClient.post(url, formData)
+        await apiClient.post(url, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data"
+          }
+        })
         .then(res => {
           if (res.status === 200) {
             alert('업로드에 성공했습니다!');

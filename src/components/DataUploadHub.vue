@@ -177,7 +177,11 @@ export default defineComponent({
         formData.append('endDate', today)
 
         const url = card.apiUrl + '/period';
-        await apiClient.post(url, formData)
+        await apiClient.post(url, formData, {
+          headers: {
+            "Content-Type": "multipart/form-data"
+          }
+        })
             .then(res => {
               if (res.status === 200) {
                 alert('업로드에 성공했습니다!');
