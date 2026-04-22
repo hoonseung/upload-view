@@ -97,7 +97,15 @@ export default defineComponent({
           description: '구매외주비 데이터를 업로드합니다.',
           fileType: 'CSV',
           apiUrl: '/api/v1/upload/cost/purchase',
-        }
+        },
+        {
+          id: 9,
+          category: 'production',
+          title: '품번 이원화 업로드',
+          description: '품번 이원화 정보를 업로드합니다.',
+          fileType: 'CSV',
+          apiUrl: '/api/v1/upload/operation/divide'
+        },
       ],
       isPanelOpen: false,
       selectedCard: null as CardData | null,
